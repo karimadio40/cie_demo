@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="800" y2="600">
+      <stop offset="0%" stop-color="#1b4332"/>
+      <stop offset="50%" stop-color="#2d6a4f"/>
+      <stop offset="100%" stop-color="#e85d04"/>
+    </linearGradient>
+    <linearGradient id="glow" x1="400" y1="200" x2="400" y2="500" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#f4d35e" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#f4d35e" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#bg)"/>
+  <ellipse cx="400" cy="380" rx="280" ry="120" fill="url(#glow)"/>
+  <circle cx="280" cy="280" r="70" fill="#fff" fill-opacity="0.15"/>
+  <circle cx="520" cy="300" r="55" fill="#fff" fill-opacity="0.12"/>
+  <rect x="120" y="420" width="560" height="8" rx="4" fill="#fff" fill-opacity="0.2"/>
+  <text x="400" y="80" text-anchor="middle" fill="#fff" font-family="system-ui,sans-serif" font-size="28" font-weight="800" letter-spacing="2">PROGRAMME PEPT</text>
+  <text x="400" y="120" text-anchor="middle" fill="#f4d35e" font-family="system-ui,sans-serif" font-size="16" font-weight="600">Électricité Pour Tous</text>
+  <text x="400" y="540" text-anchor="middle" fill="#fff" fill-opacity="0.7" font-family="system-ui,sans-serif" font-size="14">CIE  Compagnie Ivoirienne d'Électricité</text>
+</svg>

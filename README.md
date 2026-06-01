@@ -1,59 +1,49 @@
-# CieDemo
+# CIE — Plateforme de démonstration PEPT
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.2.13.
+Prototype de présentation pour la **Compagnie Ivoirienne d'Électricité (CIE)** : vitrine des services usagers, formulaire d'adhésion au **Programme Électricité Pour Tous (PEPT)** et suivi de demande par code.
 
-## Development server
-
-To start a local development server, run:
+## Démarrage
 
 ```bash
-ng serve
+npm install
+npm start
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Ouvrir [http://localhost:4200](http://localhost:4200).
 
-## Code scaffolding
+## Parcours de démonstration
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+1. **Accueil** — Présentation du PEPT, avantages et appels à l'action
+2. **Programme PEPT** — Offres tarifaires (rural / urbain), documents requis, niche compteur
+3. **Nos services** — Recharge prépayée (USSD) et crédit branchement
+4. **Souscription** — Formulaire d'adhésion → code de suivi unique (`CIE-XXXXXX`)
+5. **Suivi** — Vérification de l'état avec le code reçu
+6. **Espace agent** (`/agent/demandes`) — Liste des demandes, changement de statut, filtre et recherche
 
-```bash
-ng generate component component-name
-```
+**Code démo :** `CIE-DEMO01` (demande pré-enregistrée, statut « en analyse »)
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+Bouton **Agent** dans l'en-tête → gestion des dossiers (prototype sans authentification).
 
-```bash
-ng generate --help
-```
+## Stack technique
 
-## Building
+- Angular 21 (standalone, lazy routes)
+- Tailwind CSS 4
+- Stockage local (`localStorage`) pour la démo — à remplacer par une API CIE en production
 
-To build the project run:
+## Visuels PEPT
 
-```bash
-ng build
-```
+Placez vos photos brochure dans `public/assets/images/` :
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+- `pept-hero.jpg` — flyer promotionnel (hero accueil)
+- `pept-brochure.jpg` — brochure programme (page PEPT + vignette hero)
+- `pept-services.jpg` — flyer services (optionnel)
 
-## Running unit tests
+Sans JPG, des visuels SVG de secours s'affichent automatiquement.
 
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
+## Animations
 
-```bash
-ng test
-```
+Les sections de l'accueil s'animent au défilement (`appScrollReveal`). Désactivées si l'utilisateur a activé « réduire les animations » dans le système.
 
-## Running end-to-end tests
+## Note
 
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Ce dépôt est un **prototype de présentation**. Les données ne quittent pas le navigateur de l'utilisateur.
