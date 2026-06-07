@@ -10,11 +10,7 @@ import { RouterLink } from '@angular/router';
         <div class="grid gap-10 sm:grid-cols-2 lg:grid-cols-12 lg:gap-8">
           <div class="lg:col-span-4">
             <a routerLink="/" class="inline-flex items-center gap-2.5 no-underline">
-              <div class="flex h-9 w-9 overflow-hidden rounded-xl shadow-md">
-                <span class="flex w-1/2 items-center justify-center bg-[#e85d04] text-xs font-extrabold text-white">C</span>
-                <span class="flex w-1/2 items-center justify-center bg-[#2d6a4f] text-xs font-extrabold text-white">IE</span>
-              </div>
-              <span class="text-base font-bold text-[#0a2e36]">CIE</span>
+            <img src="logo.jpeg" alt="CIE" width="120" height="50" />
             </a>
             <p class="mt-4 max-w-xs text-sm leading-relaxed text-slate-500">
               L'énergie au service du développement. Plateforme usagers — démonstration.

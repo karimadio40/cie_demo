@@ -10,11 +10,8 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
         <div class="grid h-16 grid-cols-[1fr_auto_1fr] items-center gap-4 lg:h-[4.5rem]">
           <!-- Logo -->
           <a routerLink="/" class="flex items-center gap-2.5 no-underline">
-            <div class="flex h-9 w-9 shrink-0 overflow-hidden rounded-xl shadow-md shadow-[#0a2e36]/10">
-              <span class="flex w-1/2 items-center justify-center bg-[#e85d04] text-xs font-extrabold text-white">C</span>
-              <span class="flex w-1/2 items-center justify-center bg-[#2d6a4f] text-xs font-extrabold text-white">IE</span>
-            </div>
-            <span class="hidden text-base font-bold tracking-tight text-[#0a2e36] sm:inline">CIE</span>
+            <img src="logo1.webp" alt="CIE" width="120" height="50" />
+            <!-- <img src="logo.jpeg" alt="CIE" width="120" height="50" /> -->
           </a>
 
           <!-- Nav centre (desktop) -->
