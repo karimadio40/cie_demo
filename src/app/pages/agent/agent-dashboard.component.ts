@@ -20,16 +20,16 @@ import { SubscriptionService } from '../../core/services/subscription.service';
       <div class="border-b border-[#0a2e36]/10 bg-[#0a2e36] text-white">
         <div class="cie-container flex flex-wrap items-center justify-between gap-4 py-4">
           <div class="flex items-center gap-3">
-            <span class="flex h-10 w-10 items-center justify-center rounded-xl bg-white/10 text-lg">???</span>
+            <img src="/logo1.webp" alt="Logo CIE" class="h-10 w-auto object-contain rounded-xl bg-white p-1" />
             <div>
-              <p class="text-xs font-bold uppercase tracking-widest text-[#52b788]">Espace rùservù</p>
+              <p class="text-xs font-bold uppercase tracking-widest text-[#52b788]">Espace r√©serv√©</p>
               <h1 class="text-lg font-bold sm:text-xl">Gestion des demandes PEPT</h1>
             </div>
           </div>
           <div class="flex flex-wrap items-center gap-2">
-            <span class="rounded-full bg-white/10 px-3 py-1 text-xs text-slate-300">Agent CIE ù Dùmo</span>
+            <span class="rounded-full bg-white/10 px-3 py-1 text-xs text-slate-300">Agent CIE ‚Äî D√©mo</span>
             <a routerLink="/" class="cie-btn-secondary !border-white/20 !bg-white/10 !text-white text-sm hover:!bg-white/20">
-              ? Portail usagers
+              ‚ûî Portail usagers
             </a>
           </div>
         </div>
@@ -65,7 +65,7 @@ import { SubscriptionService } from '../../core/services/subscription.service';
           <input
             type="search"
             class="cie-input flex-1"
-            placeholder="Rechercher par code, nom, tùlùphone, communeù"
+            placeholder="Rechercher par code, nom, t√©l√©phone, commune..."
             [(ngModel)]="searchQuery"
             (ngModelChange)="onSearchChange()"
           />
@@ -90,7 +90,7 @@ import { SubscriptionService } from '../../core/services/subscription.service';
               </div>
               <ul class="max-h-[32rem] divide-y divide-[#e8edf2] overflow-y-auto">
                 @if (filteredRequests().length === 0) {
-                  <li class="px-5 py-10 text-center text-sm text-slate-500">Aucune demande trouvùe.</li>
+                  <li class="px-5 py-10 text-center text-sm text-slate-500">Aucune demande trouv√©e.</li>
                 }
                 @for (req of filteredRequests(); track req.id) {
                   <li>
@@ -104,7 +104,7 @@ import { SubscriptionService } from '../../core/services/subscription.service';
                         <div>
                           <p class="font-mono text-sm font-bold text-[#e85d04]">{{ req.trackingCode }}</p>
                           <p class="mt-0.5 font-medium text-[#0a2e36]">{{ req.prenoms }} {{ req.nom }}</p>
-                          <p class="text-xs text-slate-500">{{ req.commune }} ù Kit {{ req.offreKit }}</p>
+                          <p class="text-xs text-slate-500">{{ req.commune }} ‚Äî Kit {{ req.offreKit }}</p>
                         </div>
                         <span class="shrink-0 rounded-full px-2 py-0.5 text-[10px] font-semibold" [class]="statusBadgeClass(req.status)">
                           {{ statusLabels[req.status] }}
@@ -118,7 +118,7 @@ import { SubscriptionService } from '../../core/services/subscription.service';
             </div>
           </div>
 
-          <!-- Dùtail & traitement -->
+          <!-- D√©tail & traitement -->
           <div class="lg:col-span-7">
             @if (selected(); as req) {
               <div class="rounded-3xl border border-[#e8edf2] bg-white p-6 shadow-sm sm:p-8">
@@ -138,7 +138,7 @@ import { SubscriptionService } from '../../core/services/subscription.service';
                     <dd class="mt-1 font-semibold">{{ req.prenoms }} {{ req.nom }}</dd>
                   </div>
                   <div class="rounded-2xl bg-[#f4f7f9] p-4">
-                    <dt class="text-[10px] font-bold uppercase text-slate-400">Tùlùphone</dt>
+                    <dt class="text-[10px] font-bold uppercase text-slate-400">T√©l√©phone</dt>
                     <dd class="mt-1"><a [href]="'tel:' + req.telephone" class="text-[#e85d04] no-underline">{{ req.telephone }}</a></dd>
                   </div>
                   @if (req.email) {
@@ -153,19 +153,19 @@ import { SubscriptionService } from '../../core/services/subscription.service';
                   </div>
                   <div class="rounded-2xl bg-[#f4f7f9] p-4">
                     <dt class="text-[10px] font-bold uppercase text-slate-400">Offre</dt>
-                    <dd class="mt-1">Kit {{ req.offreKit }} ù {{ req.locationType === 'rural' ? 'Rural' : 'Urbain' }}</dd>
+                    <dd class="mt-1">Kit {{ req.offreKit }} ‚Äî {{ req.locationType === 'rural' ? 'Rural' : 'Urbain' }}</dd>
                   </div>
                   <div class="rounded-2xl bg-[#f4f7f9] p-4 sm:col-span-2">
-                    <dt class="text-[10px] font-bold uppercase text-slate-400">Piùce d'identitù</dt>
-                    <dd class="mt-1">{{ idLabels[req.typePiece] }} ù {{ req.numeroPiece }}</dd>
+                    <dt class="text-[10px] font-bold uppercase text-slate-400">Pi√®ce d'identit√©</dt>
+                    <dd class="mt-1">{{ idLabels[req.typePiece] }} ‚Äî {{ req.numeroPiece }}</dd>
                   </div>
                   <div class="rounded-2xl bg-[#f4f7f9] p-4">
                     <dt class="text-[10px] font-bold uppercase text-slate-400">Paiement comptant</dt>
-                    <dd class="mt-1">{{ req.paiementComptant ? 'Oui' : 'Non (crùdit)' }}</dd>
+                    <dd class="mt-1">{{ req.paiementComptant ? 'Oui' : 'Non (cr√©dit)' }}</dd>
                   </div>
                   <div class="rounded-2xl bg-[#f4f7f9] p-4">
-                    <dt class="text-[10px] font-bold uppercase text-slate-400">Derniùre mise ù jour</dt>
-                    <dd class="mt-1 text-sm">{{ req.updatedAt | date:'dd/MM/yyyy ù HH:mm' }}</dd>
+                    <dt class="text-[10px] font-bold uppercase text-slate-400">Derni√®re mise √† jour</dt>
+                    <dd class="mt-1 text-sm">{{ req.updatedAt | date:'dd/MM/yyyy √† HH:mm' }}</dd>
                   </div>
                   @if (req.message) {
                     <div class="rounded-2xl bg-amber-50 p-4 sm:col-span-2">
@@ -198,19 +198,19 @@ import { SubscriptionService } from '../../core/services/subscription.service';
 
                 <div class="mt-4 flex flex-wrap gap-2">
                   <button type="button" class="cie-btn-secondary text-sm" (click)="advanceStatus()" [disabled]="req.status === 'terminee'">
-                    ùtape suivante ?
+                     √âtape suivante ‚ûî
                   </button>
                   <a [routerLink]="['/suivi']" [queryParams]="{ code: req.trackingCode }" class="cie-btn-ghost text-sm" target="_blank">
-                    Voir comme usager ?
+                    Voir c√¥t√© usager ‚Üó
                   </a>
                 </div>
               </div>
             } @else {
               <div class="flex min-h-[20rem] items-center justify-center rounded-3xl border border-dashed border-[#e8edf2] bg-white p-8 text-center">
                 <div>
-                  <p class="text-4xl">??</p>
-                  <p class="mt-3 font-medium text-slate-600">Sùlectionnez une demande dans la liste</p>
-                  <p class="mt-1 text-sm text-slate-400">ou crùez-en une via le formulaire usager</p>
+                  <p class="text-5xl">üìã</p>
+                  <p class="mt-3 font-medium text-slate-600">S√©lectionnez une demande dans la liste</p>
+                  <p class="mt-1 text-sm text-slate-400">ou cr√©ez-en une via le formulaire usager</p>
                   <a routerLink="/souscription" class="cie-btn-primary mt-6 inline-flex">Formulaire de souscription</a>
                 </div>
               </div>
@@ -297,7 +297,7 @@ export class AgentDashboardComponent implements OnInit {
     const updated = this.subscriptionService.updateStatus(id, this.editStatus);
     if (updated) {
       this.refreshList();
-      this.saveMessage.set('Statut mis ù jour ù visible pour l\'usager.');
+      this.saveMessage.set('Statut mis √† jour ‚Äî visible pour l\'usager.');
       setTimeout(() => this.saveMessage.set(''), 3000);
     }
   }
